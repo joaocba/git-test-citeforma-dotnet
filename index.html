@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title</title>
+    <title>Citeforma - ASP.NET Project</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            padding-top: 56px;
+            color: #333;
         }
 
         .navbar {
-            background-color: #343a40;
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .navbar-brand,
@@ -25,12 +26,62 @@
         }
 
         .jumbotron {
-            background: #007bff;
+            position: relative;
             color: #fff;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .jumbotron video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            background: url('assets/video/banner.mp4') no-repeat;
+            background-size: cover;
+            filter: brightness(0.5);
+        }
+
+        .jumbotron .container {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .jumbotron h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            animation: fadeInDown 1s;
+        }
+
+        .jumbotron p {
+            font-size: 1.2rem;
+            animation: fadeInUp 1s;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            animation: fadeInUp 1s;
         }
 
         .features {
-            margin: 2rem 0;
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .features .fa {
+            color: #007bff;
         }
 
         .footer {
@@ -47,7 +98,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Project Title</a>
+            <a class="navbar-brand" href="#">Citeforma</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -71,12 +122,16 @@
         </div>
     </nav>
 
-    <!-- Jumbotron -->
-    <header class="jumbotron text-center">
+    <!-- Jumbotron with Video Background -->
+    <header class="jumbotron">
+        <video autoplay muted loop id="bgvideo">
+            <source src="videos/background.mp4" type="video/mp4">
+        </video>
         <div class="container">
-            <h1 class="display-4">Project Title</h1>
-            <p class="lead">A brief description of what your project does and why it is useful.</p>
-            <a href="#installation" class="btn btn-primary btn-lg">Get Started</a>
+            <h1 class="animate__animated animate__fadeInDown">Citeforma</h1>
+            <p class="lead animate__animated animate__fadeInUp">A powerful ASP.NET project to manage and streamline
+                citation workflows.</p>
+            <a href="#installation" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Get Started</a>
         </div>
     </header>
 
@@ -88,17 +143,17 @@
                 <div class="col-md-4">
                     <i class="fas fa-cog fa-3x mb-2"></i>
                     <h3>Feature One</h3>
-                    <p>Detail about feature one.</p>
+                    <p>Automated citation formatting and management.</p>
                 </div>
                 <div class="col-md-4">
                     <i class="fas fa-cloud fa-3x mb-2"></i>
                     <h3>Feature Two</h3>
-                    <p>Detail about feature two.</p>
+                    <p>Cloud-based storage for easy access.</p>
                 </div>
                 <div class="col-md-4">
                     <i class="fas fa-lock fa-3x mb-2"></i>
                     <h3>Feature Three</h3>
-                    <p>Detail about feature three.</p>
+                    <p>Secure access and data protection.</p>
                 </div>
             </div>
         </div>
@@ -117,10 +172,10 @@
         <div class="container">
             <h2 class="mb-4">Installation</h2>
             <p>Follow these steps to get started:</p>
-            <pre><code>git clone https://github.com/yourusername/yourproject.git
-cd yourproject
-npm install
-npm start
+            <pre><code>git clone https://github.com/yourusername/citeforma.git
+cd citeforma
+dotnet restore
+dotnet run
       </code></pre>
         </div>
     </section>
@@ -150,6 +205,10 @@ npm start
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 
 </html>
