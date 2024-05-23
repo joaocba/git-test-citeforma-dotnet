@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citeforma - ASP.NET Project</title>
+    <title>Citeforma - Learn ASP.NET</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -17,7 +18,7 @@
         }
 
         .navbar {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.85);
         }
 
         .navbar-brand,
@@ -34,7 +35,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
         }
 
         .jumbotron video {
@@ -47,7 +48,7 @@
             height: auto;
             z-index: -1;
             transform: translateX(-50%) translateY(-50%);
-            background: url('assets/video/banner.mp4') no-repeat;
+            background: url('images/jumbotron-bg.jpg') no-repeat;
             background-size: cover;
             filter: brightness(0.5);
         }
@@ -82,6 +83,42 @@
 
         .features .fa {
             color: #007bff;
+            margin-bottom: 1rem;
+        }
+
+        .courses {
+            padding: 4rem 0;
+            background-color: #ffffff;
+        }
+
+        .courses .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .courses .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .courses .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .contact {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .contact .form-control {
+            border-radius: 30px;
+        }
+
+        .contact .btn-primary {
+            border-radius: 30px;
+            background-color: #007bff;
+            border-color: #007bff;
         }
 
         .footer {
@@ -89,6 +126,10 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+        }
+
+        .wow {
+            visibility: hidden;
         }
     </style>
 </head>
@@ -109,10 +150,10 @@
                         <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#demo">Demo</a>
+                        <a class="nav-link" href="#courses">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#installation">Installation</a>
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -125,70 +166,131 @@
     <!-- Jumbotron with Video Background -->
     <header class="jumbotron">
         <video autoplay muted loop id="bgvideo">
-            <source src="assets/video/banner.mp4" type="video/mp4">
+            <source src="videos/background.mp4" type="video/mp4">
         </video>
         <div class="container">
             <h1 class="animate__animated animate__fadeInDown">Citeforma</h1>
-            <p class="lead animate__animated animate__fadeInUp">A powerful ASP.NET project to manage and streamline
-                citation workflows.</p>
-            <a href="#installation" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Get Started</a>
+            <p class="lead animate__animated animate__fadeInUp">Learn ASP.NET and develop web applications with
+                expertise.</p>
+            <a href="#courses" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Explore Courses</a>
         </div>
     </header>
 
     <!-- Features Section -->
     <section id="features" class="features text-center">
         <div class="container">
-            <h2 class="mb-4">Features</h2>
+            <h2 class="mb-4" data-aos="fade-up">Features</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <i class="fas fa-cog fa-3x mb-2"></i>
-                    <h3>Feature One</h3>
-                    <p>Automated citation formatting and management.</p>
+                <div class="col-md-4" data-aos="zoom-in">
+                    <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry experts with years of experience.</p>
                 </div>
-                <div class="col-md-4">
-                    <i class="fas fa-cloud fa-3x mb-2"></i>
-                    <h3>Feature Two</h3>
-                    <p>Cloud-based storage for easy access.</p>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-book-open fa-3x"></i>
+                    <h3>Comprehensive Curriculum</h3>
+                    <p>Covering all aspects of ASP.NET development.</p>
                 </div>
-                <div class="col-md-4">
-                    <i class="fas fa-lock fa-3x mb-2"></i>
-                    <h3>Feature Three</h3>
-                    <p>Secure access and data protection.</p>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-award fa-3x"></i>
+                    <h3>Certification</h3>
+                    <p>Receive recognized certifications upon completion.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Demo Section -->
-    <section id="demo" class="text-center">
+    <!-- Courses Section -->
+    <section id="courses" class="courses text-center">
         <div class="container">
-            <h2 class="mb-4">Demo</h2>
-            <img src="images/demo.gif" alt="Project Demo" class="img-fluid">
+            <h2 class="mb-4" data-aos="fade-up">Our Courses</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <img src="images/basics.jpg" class="card-img-top" alt="Course 1">
+                        <div class="card-body">
+                            <h5 class="card-title">ASP.NET Basics</h5>
+                            <p class="card-text">Start your journey with ASP.NET basics.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <img src="images/middle.jpg" class="card-img-top" alt="Course 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Advanced ASP.NET</h5>
+                            <p class="card-text">Master advanced concepts and techniques.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <img src="images/advanced.jpg" class="card-img-top" alt="Course 3">
+                        <div class="card-body">
+                            <h5 class="card-title">ASP.NET Projects</h5>
+                            <p class="card-text">Build real-world applications.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Installation Section -->
-    <section id="installation" class="text-center">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="text-center bg-light">
         <div class="container">
-            <h2 class="mb-4">Installation</h2>
-            <p>Follow these steps to get started:</p>
-            <pre><code>git clone https://github.com/yourusername/citeforma.git
-cd citeforma
-dotnet restore
-dotnet run
-      </code></pre>
+            <h2 class="mb-4" data-aos="fade-up">Testimonials</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Citeforma's ASP.NET course was a game-changer for my career."</p>
+                        <footer class="blockquote-footer">John Doe</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"The instructors are very knowledgeable and helpful."</p>
+                        <footer class="blockquote-footer">Jane Smith</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Highly recommend for anyone looking to learn web development."</p>
+                        <footer class="blockquote-footer">Alice Johnson</footer>
+                    </blockquote>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="text-center">
+    <section id="contact" class="contact text-center">
         <div class="container">
-            <h2 class="mb-4">Contact</h2>
-            <p>For any inquiries, please reach out to:</p>
-            <p><a href="mailto:email@example.com">email@example.com</a></p>
+            <h2 class="mb-4" data-aos="fade-up">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form data-aos="fade-up" data-aos-delay="200">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <p class="mt-4" data-aos="fade-up">Or reach out to us via email: <a
+                    href="mailto:info@citeforma.edu">info@citeforma.edu</a></p>
             <p>
-                <a href="https://twitter.com/yourtwitterhandle" class="btn btn-primary">
-                    <i class="fab fa-twitter"></i> Twitter
+                <a href="https://twitter.com/citeforma" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fab fa-twitter"></i> Follow us on Twitter
                 </a>
             </p>
         </div>
@@ -197,7 +299,7 @@ dotnet run
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+            <p>&copy; 2024 Citeforma. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -205,9 +307,9 @@ dotnet run
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        new WOW().init();
+        AOS.init();
     </script>
 </body>
 
