@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citeforma - Learn ASP.NET</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Citeforma - Learn more</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -36,6 +36,7 @@
             align-items: center;
             justify-content: center;
             background: rgba(0, 0, 0, 0.6);
+            margin-bottom: 0 !important;
         }
 
         .jumbotron video {
@@ -81,9 +82,17 @@
             background-color: #f8f9fa;
         }
 
+        .features-title {
+            margin-bottom: 4rem !important;
+        }
+
         .features .fa {
             color: #007bff;
             margin-bottom: 1rem;
+        }
+
+        .features-list-2 {
+            margin-top: 4rem;
         }
 
         .courses {
@@ -94,6 +103,7 @@
         .courses .card {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            height: 400px;
         }
 
         .courses .card:hover {
@@ -119,6 +129,10 @@
             border-radius: 30px;
             background-color: #007bff;
             border-color: #007bff;
+        }
+
+        .testimonials {
+            padding: 4rem 0;
         }
 
         .footer {
@@ -166,35 +180,66 @@
     <!-- Jumbotron with Video Background -->
     <header class="jumbotron">
         <video autoplay muted loop id="bgvideo">
-            <source src="videos/background.mp4" type="video/mp4">
+            <source src="assets/videos/background.mp4" type="video/mp4">
         </video>
         <div class="container">
-            <h1 class="animate__animated animate__fadeInDown">Citeforma</h1>
-            <p class="lead animate__animated animate__fadeInUp">Learn ASP.NET and develop web applications with
-                expertise.</p>
-            <a href="#courses" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Explore Courses</a>
+            <h1 class="animate__animated animate__fadeInDown">Citeforma App</h1>
+            <p class="lead animate__animated animate__fadeInUp">Browse courses, enroll, view grades, and connect with
+                mentors and colleagues.</p>
+            <a href="#courses" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">Download App
+                (Beta)</a>
         </div>
     </header>
 
     <!-- Features Section -->
     <section id="features" class="features text-center">
         <div class="container">
-            <h2 class="mb-4" data-aos="fade-up">Features</h2>
+            <h2 class="mb-4 features-title">Key Features</h2>
             <div class="row">
                 <div class="col-md-4" data-aos="zoom-in">
-                    <i class="fas fa-chalkboard-teacher fa-3x"></i>
-                    <h3>Expert Instructors</h3>
-                    <p>Learn from industry experts with years of experience.</p>
+                    <div class="feature-item">
+                        <i class="fas fa-user-graduate fa-3x mb-3"></i>
+                        <h3>Expert Instructors</h3>
+                        <p>Learn from industry experts with years of experience.</p>
+                    </div>
                 </div>
                 <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-book-open fa-3x"></i>
-                    <h3>Comprehensive Curriculum</h3>
-                    <p>Covering all aspects of ASP.NET development.</p>
+                    <div class="feature-item">
+                        <i class="fas fa-book fa-3x mb-3"></i>
+                        <h3>Comprehensive Curriculum</h3>
+                        <p>Covering all aspects of ASP.NET development.</p>
+                    </div>
                 </div>
                 <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fas fa-award fa-3x"></i>
-                    <h3>Certification</h3>
-                    <p>Receive recognized certifications upon completion.</p>
+                    <div class="feature-item">
+                        <i class="fas fa-certificate fa-3x mb-3"></i>
+                        <h3>Certification</h3>
+                        <p>Receive recognized certifications upon completion.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row features-list-2">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="feature-item">
+                        <i class="fas fa-comments fa-3x mb-3"></i>
+                        <h3>Community Engagement</h3>
+                        <p>Connect with peers and mentors, exchange messages, and collaborate on projects.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="feature-item">
+                        <i class="fas fa-award fa-3x mb-3"></i>
+                        <h3>Personalized Feedback</h3>
+                        <p>Receive personalized feedback from instructors and mentors to enhance your learning
+                            experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="1000">
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt fa-3x mb-3"></i>
+                        <h3>Mobile-Friendly</h3>
+                        <p>Access courses and resources on the go with our mobile-friendly platform.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,34 +248,40 @@
     <!-- Courses Section -->
     <section id="courses" class="courses text-center">
         <div class="container">
-            <h2 class="mb-4" data-aos="fade-up">Our Courses</h2>
+            <h2 class="mb-4">Our Courses</h2>
             <div class="row">
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-4 mb-4" data-aos-delay="100">
                     <div class="card">
-                        <img src="images/basics.jpg" class="card-img-top" alt="Course 1">
+                        <img src="assets/images/basics.jpg" class="card-img-top" alt="Course 1">
                         <div class="card-body">
                             <h5 class="card-title">ASP.NET Basics</h5>
                             <p class="card-text">Start your journey with ASP.NET basics.</p>
+                        </div>
+                        <div class="card-footer">
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-4 mb-4" data-aos-delay="200">
                     <div class="card">
-                        <img src="images/middle.jpg" class="card-img-top" alt="Course 2">
+                        <img src="assets/images/middle.jpg" class="card-img-top" alt="Course 2">
                         <div class="card-body">
                             <h5 class="card-title">Advanced ASP.NET</h5>
                             <p class="card-text">Master advanced concepts and techniques.</p>
+                        </div>
+                        <div class="card-footer">
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4 mb-4" data-aos-delay="300">
                     <div class="card">
-                        <img src="images/advanced.jpg" class="card-img-top" alt="Course 3">
+                        <img src="assets/images/advanced.jpg" class="card-img-top" alt="Course 3">
                         <div class="card-body">
                             <h5 class="card-title">ASP.NET Projects</h5>
                             <p class="card-text">Build real-world applications.</p>
+                        </div>
+                        <div class="card-footer">
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
@@ -240,23 +291,23 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="text-center bg-light">
+    <section id="testimonials" class="testimonials text-center bg-light">
         <div class="container">
-            <h2 class="mb-4" data-aos="fade-up">Testimonials</h2>
+            <h2 class="mb-4">Testimonials</h2>
             <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-4" data-aos-delay="100">
                     <blockquote class="blockquote">
                         <p class="mb-0">"Citeforma's ASP.NET course was a game-changer for my career."</p>
                         <footer class="blockquote-footer">John Doe</footer>
                     </blockquote>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-4" data-aos-delay="200">
                     <blockquote class="blockquote">
                         <p class="mb-0">"The instructors are very knowledgeable and helpful."</p>
                         <footer class="blockquote-footer">Jane Smith</footer>
                     </blockquote>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4" data-aos-delay="300">
                     <blockquote class="blockquote">
                         <p class="mb-0">"Highly recommend for anyone looking to learn web development."</p>
                         <footer class="blockquote-footer">Alice Johnson</footer>
@@ -269,10 +320,10 @@
     <!-- Contact Section -->
     <section id="contact" class="contact text-center">
         <div class="container">
-            <h2 class="mb-4" data-aos="fade-up">Contact Us</h2>
+            <h2 class="mb-4">Contact Us</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <form data-aos="fade-up" data-aos-delay="200">
+                    <form data-aos-delay="200">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Your Name" required>
                         </div>
@@ -286,11 +337,10 @@
                     </form>
                 </div>
             </div>
-            <p class="mt-4" data-aos="fade-up">Or reach out to us via email: <a
-                    href="mailto:info@citeforma.edu">info@citeforma.edu</a></p>
+            <p class="mt-4">Or reach out to us via email: <a href="mailto:info@citeforma.edu">info@citeforma.edu</a></p>
             <p>
-                <a href="https://twitter.com/citeforma" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fab fa-twitter"></i> Follow us on Twitter
+                <a href="https://x.com/citeforma" class="btn btn-primary" data-aos-delay="300">
+                    Follow us on <i class="fa-brands fa-x-twitter"></i>
                 </a>
             </p>
         </div>
